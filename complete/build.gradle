@@ -1,0 +1,6 @@
+apply plugin: 'java'
+
+repositories { mavenCentral() }
+dependencies {
+  compile "joda-time:joda-time:2.2"
+}
