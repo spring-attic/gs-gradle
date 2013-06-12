@@ -133,6 +133,7 @@ The _libs_ folder should contain a JAR file that is named after the project's fo
 
 Declaring Dependencies
 ----------------------
+
 The simple Hello World sample is completely self-contained and does not depend on any additional libraries. Most application, however, depend on external libraries to handle common and/or complex functionality.
 
 For example, suppose that in addition to saying "Hello World!", you want the application to print the current date and time. While you could use the date and time facilities in the native Java libraries, you can make things more interesting by using the Joda Time libraries.
