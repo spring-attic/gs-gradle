@@ -14,21 +14,7 @@ What you'll need
 
 [jdk]: http://www.oracle.com/technetwork/java/javase/downloads/index.html
 
-How to complete this guide
---------------------------
-
-Like all Spring's [Getting Started guides](/getting-started), you can start from scratch and complete each step, or you can bypass basic setup steps that are already familiar to you. Either way, you end up with working code.
-
-To **start from scratch**, move on to [Set up the project](#scratch).
-
-To **skip the basics**, do the following:
-
- - [Download][zip] and unzip the source repository for this guide, or clone it using [git](/understanding/git):
-`git clone https://github.com/springframework-meta/{@project-name}.git`
- - cd into `{@project-name}/initial`
- - Jump ahead to [Create a resource representation class](#initial).
-
-**When you're finished**, you can check your results against the code in `{@project-name}/complete`.
+## {!include#how-to-complete-this-guide}
 
 <a name="scratch"></a>
 Set up the project
@@ -36,46 +22,15 @@ Set up the project
 
 First you'll need to setup a Java project for Gradle to build. To keep the focus on Gradle, you should keep the project as simple as possible for now.
 
-### Create the directory structure
-
-In a project directory of your choosing, create the following subdirectory structure; for example, with `mkdir -p src/main/java/hello` on *nix systems:
-
-    └── src
-        └── main
-            └── java
-                └── hello
+{!include#create-directory-structure-hello}
 
 ### Creating Java classes
 
 Within the `src/main/java/hello` directory, you can create any Java classes you want. For simplicity's sake and for consistency with the rest of this guide, we recommend that you create two classes: `HelloWorld.java` and `Greeter.java`.
 
-`src/main/java/hello/HelloWorld.java`
-```java
-package hello;
+    {!include:complete/src/main/java/hello/HelloWorld.java}
 
-import org.joda.time.LocalTime;
-
-public class HelloWorld {
-  public static void main(String[] args) {
-    LocalTime currentTime = new LocalTime();
-    System.out.println("The current local time is: " + currentTime);
-
-    Greeter greeter = new Greeter();
-    System.out.println(greeter.sayHello());
-  }
-}
-```
-
-`src/main/java/hello/Greeter.java`
-```java
-package hello;
-
-public class Greeter {
-  public String sayHello() {
-    return "Hello world!";
-  }
-}
-```
+    {!include:complete/src/main/java/hello/Greeter.java}
 
 
 <a name="initial"></a>
