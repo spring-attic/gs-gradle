@@ -178,6 +178,10 @@ Another thing to note about this dependency is that it is a `compile` dependency
 
 Now if you run `gradle build`, Gradle should resolve the Joda Time dependency from the Maven Central repository and the build will be successful.
 
+Here's the completed `build.gradle` file:
+
+    {!include:complete/build.gradle}
+
 Next Steps
 ==========
 Congratulations! You have now created a very simple, yet effective Gradle build file for building Java projects.
