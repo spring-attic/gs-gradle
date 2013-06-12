@@ -10,9 +10,9 @@ $ git clone https://github.com/springframework-meta/gs-gradle.git
 
 In the `start` folder, you'll find a bare project, ready for you to copy-n-paste code snippets from this document. In the `complete` folder, you'll find the complete project code. 
 
-In both cases, you'll find a simple Java project that we'll build. Our focus will be on the build.gradle and gradle.settings files. The Java files are only there as source for our build efforts.
+In both cases, you'll find a simple Java project that we'll build. Our focus will be on the _build.gradle_ and _gradle.settings_ files. The Java files are only there as source for our build efforts.
 
-We'll start by installing Gradle and then start filling in the build.gradle file. If you already have Gradle installed, then you can jump to the [fun part](#finding-out-what-gradle-can-do).
+We'll start by installing Gradle and then start filling in the _build.gradle_ file. If you already have Gradle installed, then you can jump to the [fun part](#finding-out-what-gradle-can-do).
 
 Installing Gradle
 -----------------
@@ -48,13 +48,13 @@ Congratulations! You now have Gradle installed.
 
 Finding Out What Gradle Can Do
 ------------------------------
-Now that Gradle is installed, let's kick the tires on it and see what it can do. Before we even create a build.gradle file for the project, there's already something we can do with Gradle: Ask it what tasks are available. To do that, issue the following on the command line:
+Now that Gradle is installed, let's kick the tires on it and see what it can do. Before we even create a _build.gradle_ file for the project, there's already something we can do with Gradle: Ask it what tasks are available. To do that, issue the following on the command line:
 
 ```sh
 $ gradle tasks
 ```
 
-You should see a list of tasks that are available in Gradle. Assuming you run Gradle in a folder where there's not already a build.gradle file, you'll see some very elementary tasks such as this:
+You should see a list of tasks that are available in Gradle. Assuming you run Gradle in a folder where there's not already a _build.gradle_ file, you'll see some very elementary tasks such as this:
 
 ```sh
 :tasks
