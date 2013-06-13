@@ -182,6 +182,6 @@ Here's the completed `build.gradle` file:
 
     {!include:complete/build.gradle}
 
-Next Steps
-==========
+Summary
+=======
 Congratulations! You have now created a very simple, yet effective Gradle build file for building Java projects.

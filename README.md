@@ -235,6 +235,6 @@ dependencies {
 }
 ```
 
-Next Steps
-==========
+Summary
+=======
 Congratulations! You have now created a very simple, yet effective Gradle build file for building Java projects.
