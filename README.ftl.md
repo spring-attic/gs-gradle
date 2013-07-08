@@ -1,3 +1,4 @@
+<#assign project_id="gs-gradle">
 
 # Getting Started: Building Java Projects with Gradle
 
@@ -15,22 +16,7 @@ What you'll need
 
 [jdk]: http://www.oracle.com/technetwork/java/javase/downloads/index.html
 
-How to complete this guide
---------------------------
-
-Like all Spring's [Getting Started guides](/getting-started), you can start from scratch and complete each step, or you can bypass basic setup steps that are already familiar to you. Either way, you end up with working code.
-
-To **start from scratch**, move on to [Set up the project](#scratch).
-
-To **skip the basics**, do the following:
-
- - [Download][zip] and unzip the source repository for this guide, or clone it using [git](/understanding/git):
-`git clone https://github.com/springframework-meta/gs-gradle.git`
- - cd into `gs-gradle/initial`
- - Jump ahead to [Install Gradle](#initial).
-
-**When you're finished**, you can check your results against the code in `gs-gradle/complete`.
-[zip]: https://github.com/springframework-meta/gs-gradle/archive/master.zip
+## <@how_to_complete_this_guide jump_ahead='Install Gradle'/>
 
 <a name="scratch"></a>
 Set up the project
@@ -38,46 +24,15 @@ Set up the project
 
 First you set up a Java project for Gradle to build. To keep the focus on Gradle, make the project as simple as possible for now.
 
-### Create the directory structure
-
-In a project directory of your choosing, create the following subdirectory structure; for example, with `mkdir -p src/main/java/hello` on *nix systems:
-
-    └── src
-        └── main
-            └── java
-                └── hello
+<@create_directory_structure_hello/>
 
 ### Create Java classes
 
 Within the `src/main/java/hello` directory, you can create any Java classes you want. For simplicity's sake and for consistency with the rest of this guide, Spring recommends that you create two classes: `HelloWorld.java` and `Greeter.java`.
 
-`src/main/java/hello/HelloWorld.java`
-```java
-package hello;
+    <@snippet path="src/main/java/hello/HelloWorld.java" prefix="complete"/>
 
-import org.joda.time.LocalTime;
-
-public class HelloWorld {
-  public static void main(String[] args) {
-    LocalTime currentTime = new LocalTime();
-    System.out.println("The current local time is: " + currentTime);
-
-    Greeter greeter = new Greeter();
-    System.out.println(greeter.sayHello());
-  }
-}
-```
-
-`src/main/java/hello/Greeter.java`
-```java
-package hello;
-
-public class Greeter {
-  public String sayHello() {
-    return "Hello world!";
-  }
-}
-```
+    <@snippet path="src/main/java/hello/Greeter.java" prefix="complete"/>
 
 
 <a name="initial"></a>
@@ -227,16 +182,7 @@ Now if you run `gradle build`, Gradle should resolve the Joda Time dependency fr
 
 Here's the completed `build.gradle` file:
 
-`build.gradle`
-```gradle
-apply plugin: 'java'
-apply plugin: 'eclipse'
-
-repositories { mavenCentral() }
-dependencies {
-  compile "joda-time:joda-time:2.2"
-}
-```
+    <@snippet path="build.gradle" prefix="complete"/>
 
 Summary
 =======
