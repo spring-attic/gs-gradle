@@ -1,12 +1,12 @@
-### Related Resources
+## Related Resources
 
-Building applications with Gradle is just one facet of application development. You may want to continue your study of building applications with the following
+Building applications with Gradle is just one facet of application development. You can continue to learn about building applications with the following resources.
 
 ### Getting Started Guides
 
-* [Building Java Applications with Maven][gs-maven]
-* [Building Android Applications with Maven][gs-maven-android]
-* [Building Android Applications with Gradle][gs-gradle-android]
+* [Building Java Projects with Maven][gs-maven]
+* [Building Android Projects with Maven][gs-maven-android]
+* [Building Android Projects with Gradle][gs-gradle-android]
 
 [gs-maven]: /guides/gs/maven/content
 [gs-maven-android]: /guides/gs/maven-android/content
@@ -18,7 +18,7 @@ Building applications with Gradle is just one facet of application development. 
 
 [tut-tbd]: /guides/tutorials/tbd
 
-### Understanding
+### Concepts and Technologies
 
 * [REST][u-rest]
 * [JSON][u-json]
