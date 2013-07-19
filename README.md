@@ -87,7 +87,7 @@ Now that you have a project that you can build with Gradle, you can install Grad
 
 Gradle is downloadable as a zip file at http://www.gradle.org/downloads. Only the binaries are required, so look for the link to gradle-_version_-bin.zip. (You can also choose gradle-_version_-all.zip to get the sources and documentation as well as the binaries.)
 
-After you download the zip file, unzip it to your computer. Then add the bin folder to your path.
+Unzip the file to your computer, and add the bin folder to your path.
 
 To test the Gradle installation, run Gradle from the command-line:
 
@@ -95,7 +95,7 @@ To test the Gradle installation, run Gradle from the command-line:
 $ gradle
 ```
 
-If all goes well, you see a welcome message like the following:
+If all goes well, you see a welcome message:
 
 ```sh
 :help
@@ -117,7 +117,7 @@ You now have Gradle installed.
 
 Find out what Gradle can do
 ------------------------------
-Now that Gradle is installed, kick the tires on it and see what it can do. Before you even create a build.gradle file for the project, you can ask it what tasks are available:
+Now that Gradle is installed, see what it can do. Before you even create a build.gradle file for the project, you can ask it what tasks are available:
 
 ```sh
 $ gradle tasks
@@ -142,7 +142,7 @@ properties - Displays the properties of root project 'Downloads'.
 tasks - Displays the tasks runnable from root project 'Downloads' (some of the displayed tasks may belong to subprojects).
 ```
 
-Even though these tasks are available, they don't offer much value without a project build configuration. As you flesh out the build.gradle file, some tasks will be more useful. The list of tasks will grow as you add plugins to the build.gradle file, so  you'll occasionally want to run **tasks** again to see what tasks are available.
+Even though these tasks are available, they don't offer much value without a project build configuration. As you flesh out the build.gradle file, some tasks will be more useful. The list of tasks will grow as you add plugins to build.gradle, so  you'll occasionally want to run **tasks** again to see what tasks are available.
 
 Speaking of adding plugins, next you add a plugin that enables basic Java build functionality.
 
@@ -154,9 +154,9 @@ Starting simple, create a very basic build.gradle file that has only one line in
 apply plugin: 'java'
 ```
 
-This single line in the build configuration brings a significant amount of power. Run **tasks** again, and you see new tasks added to the list, including tasks for building the project, creating JavaDoc, and running tests.
+This single line in the build configuration brings a significant amount of power. Run **gradle tasks** again, and you see new tasks added to the list, including tasks for building the project, creating JavaDoc, and running tests.
 
-The **build** task is probably one of the tasks you'll use most often with Gradle. This task compiles, tests, and assembles the code into a JAR file. You can run it like this:
+You'll use the **gradle build** task frequently. This task compiles, tests, and assembles the code into a JAR file. You can run it like this:
 
 ```sh
 $ gradle build
@@ -170,7 +170,7 @@ To see the results of the build effort, take a look in the _build_ folder. There
 * _reports_. Reports produced by the build (such as test reports).
 * _libs_. Assembled project libraries (usually JAR and/or WAR files).
 
-In the classes folder, you'll find the .class files resulting from compiling the Java code. Specifically, you should find HelloWorld.class and Greeter.class.
+The classes folder has .class files that are generated from compiling the Java code. Specifically, you should find HelloWorld.class and Greeter.class.
 
 At this point, the project doesn't have any library dependencies, so there's nothing in the *dependency_cache* folder.
 
