@@ -3,5 +3,9 @@ apply plugin: 'eclipse'
 
 repositories { mavenCentral() }
 dependencies {
-  compile "joda-time:joda-time:2.2"
+    compile "joda-time:joda-time:2.2"
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.6'
 }
