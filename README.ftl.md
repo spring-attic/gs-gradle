@@ -1,9 +1,10 @@
 <#assign project_id="gs-gradle">
+This guide walks you through using Gradle to build a simple Java project.
 
 What you'll build
 -----------------
 
-This guide walks you through using Gradle to build a simple Java project. 
+You'll create a simple app and then build it using Gradle.
 
 What you'll need
 ----------------

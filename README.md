@@ -1,8 +1,9 @@
+This guide walks you through using Gradle to build a simple Java project.
 
 What you'll build
 -----------------
 
-This guide walks you through using Gradle to build a simple Java project. 
+You'll create a simple app and then build it using Gradle.
 
 What you'll need
 ----------------
@@ -232,7 +233,11 @@ apply plugin: 'eclipse'
 
 repositories { mavenCentral() }
 dependencies {
-  compile "joda-time:joda-time:2.2"
+    compile "joda-time:joda-time:2.2"
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.6'
 }
 ```
 
