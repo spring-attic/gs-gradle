@@ -8,9 +8,9 @@ Building applications with Gradle is just one facet of application development. 
 * [Building Android Projects with Maven][gs-maven-android]
 * [Building Android Projects with Gradle][gs-gradle-android]
 
-[gs-maven]: /guides/gs/maven/content
-[gs-maven-android]: /guides/gs/maven-android/content
-[gs-gradle-android]: /guides/gs/gradle-android/content
+[gs-maven]: /guides/gs/maven/
+[gs-maven-android]: /guides/gs/maven-android/
+[gs-gradle-android]: /guides/gs/gradle-android/
 
 ### Tutorials
 
