@@ -23,5 +23,5 @@ Building applications with Gradle is just one facet of application development. 
 * [REST][u-rest]
 * [JSON][u-json]
 
-[u-rest]: /understanding/rest
-[u-json]: /understanding/json
+[u-rest]: /understanding/REST
+[u-json]: /understanding/JSON
