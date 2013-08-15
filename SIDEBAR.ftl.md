@@ -2,7 +2,7 @@
 
 Building applications with Gradle is just one facet of application development. You can continue to learn about building applications with the following resources.
 
-### Getting Started Guides
+### Getting Started guides
 
 * [Building Java Projects with Maven][gs-maven]
 * [Building Android Projects with Maven][gs-maven-android]
