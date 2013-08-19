@@ -1,4 +1,4 @@
-## Related Resources
+## Related resources
 
 Building applications with Gradle is just one facet of application development. You can continue to learn about building applications with the following resources.
 
@@ -18,7 +18,7 @@ Building applications with Gradle is just one facet of application development. 
 
 [tut-rest]: /guides/tutorials/rest
 
-### Concepts and Technologies
+### Concepts and technologies
 
 * [REST][u-rest]
 * [JSON][u-json]
