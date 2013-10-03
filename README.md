@@ -103,7 +103,7 @@ If all goes well, you see a welcome message:
 ```sh
 :help
 
-Welcome to Gradle 1.7.
+Welcome to Gradle 1.8.
 
 To run a build, run gradle <task> ...
 
@@ -250,7 +250,7 @@ The Gradle Wrapper is the preferred way of starting a Gradle build. It consists 
 
 ```groovy
 task wrapper(type: Wrapper) {
-    gradleVersion = '1.7'
+    gradleVersion = '1.8'
 }
 ```
 
