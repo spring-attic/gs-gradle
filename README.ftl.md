@@ -31,9 +31,9 @@ First you set up a Java project for Gradle to build. To keep the focus on Gradle
 
 Within the `src/main/java/hello` directory, you can create any Java classes you want. For simplicity's sake and for consistency with the rest of this guide, Spring recommends that you create two classes: `HelloWorld.java` and `Greeter.java`.
 
-    <@snippet path="src/main/java/hello/HelloWorld.java" prefix="complete"/>
+    <@snippet path="src/main/java/hello/HelloWorld.java" prefix="initial"/>
 
-    <@snippet path="src/main/java/hello/Greeter.java" prefix="complete"/>
+    <@snippet path="src/main/java/hello/Greeter.java" prefix="initial"/>
 
 
 <a name="initial"></a>
