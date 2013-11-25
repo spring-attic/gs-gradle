@@ -18,7 +18,6 @@ You'll create a simple app and then build it using Gradle.
  - {jdk}[JDK 6] or later
 
 
-:jump_ahead: Install Gradle
 include::https://raw.github.com/spring-guides/getting-started-macros/master/how_to_complete_this_guide.adoc[]
 
 
