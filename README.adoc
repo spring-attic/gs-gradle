@@ -117,17 +117,17 @@ BUILD SUCCESSFUL
 Total time: 3.077 secs
 ....
 
-Even though these tasks are available, they don't offer much value without a project build configuration. As you flesh out the build.gradle file, some tasks will be more useful. The list of tasks will grow as you add plugins to build.gradle, so you'll occasionally want to run **tasks** again to see what tasks are available.
+Even though these tasks are available, they don't offer much value without a project build configuration. As you flesh out the `build.gradle` file, some tasks will be more useful. The list of tasks will grow as you add plugins to `build.gradle`, so you'll occasionally want to run **tasks** again to see what tasks are available.
 
 Speaking of adding plugins, next you add a plugin that enables basic Java build functionality.
 
 
 == Build Java code
-Starting simple, create a very basic build.gradle file that has only one line in it:
+Starting simple, create a very basic `build.gradle` file that has only one line in it:
 
 [source,groovy]
 ----
-apply plugin: 'java'
+include::initial/build.gradle[]
 ----
 
 This single line in the build configuration brings a significant amount of power. Run **gradle tasks** again, and you see new tasks added to the list, including tasks for building the project, creating JavaDoc, and running tests.
@@ -152,7 +152,7 @@ At this point, the project doesn't have any library dependencies, so there's not
 
 The reports folder should contain a report of running unit tests on the project. Because the project doesn't yet have any unit tests, that report will be uninteresting.
 
-The libs folder should contain a JAR file that is named after the project's folder. If you cloned the project from GitHub, then the JAR file is likely named initial.jar. That's probably not what you'd want it named, though.
+The libs folder should contain a JAR file that is named after the project's folder. Further down, you'll see how you can specify the name of the JAR and its version.
 
 
 == Declare dependencies
@@ -182,37 +182,50 @@ public class HelloWorld {
 
 Here `HelloWorld` uses Joda Time's `LocalTime` class to get and print the current time. 
 
-If you ran `gradle build` to build the project now, the build would fail because you have not declared Joda Time as a compile dependency in the build. You can fix that by adding the following lines to build.gradle:
+If you ran `gradle build` to build the project now, the build would fail because you have not declared Joda Time as a compile dependency in the build.
+
+For starters, you need to add a source for 3rd party libraries.
 
 [source,groovy]
 ----
-repositories { mavenCentral() }
-dependencies {
-  compile "joda-time:joda-time:2.2"
-}
+include::complete/build.gradle[tag=repositories]
 ----
 
-The first line here indicates that the build should resolve its dependencies from the Maven Central repository. Gradle leans heavily on many conventions and facilities established by the Maven build tool, including the option of using Maven Central as a source of library dependencies.
+The `repositories` block indicates that the build should resolve its dependencies from the Maven Central repository. Gradle leans heavily on many conventions and facilities established by the Maven build tool, including the option of using Maven Central as a source of library dependencies.
 
-Within the `dependencies` block, you declare a single dependency for Joda Time. Specifically, you're asking for (reading right to left) version 2.2 of the joda-time library, in the joda-time group. 
+Now that we're ready for 3rd party libraries, let's declare some.
+
+[source,groovy]
+----
+include::complete/build.gradle[tag=dependencies]
+----
+
+With the `dependencies` block, you declare a single dependency for Joda Time. Specifically, you're asking for (reading right to left) version 2.2 of the joda-time library, in the joda-time group. 
 
 Another thing to note about this dependency is that it is a `compile` dependency, indicating that it should be available during compile-time (and if you were building a WAR file, included in the /WEB-INF/libs folder of the WAR). Other notable types of dependencies include:
 
 * `providedCompile`. Required dependencies for compiling the project code, but that will be provided at runtime by a container running the code (for example, the Java Servlet API).
 * `testCompile`. Dependencies used for compiling and running tests, but not required for building or running the project's runtime code.
 
+Finally, let's specify the name for our JAR artifact.
+
+[source,groovy]
+----
+include::complete/build.gradle[tag=jar]
+----
+
+The `jar` block specifies how the JAR file will be named. In this case, it will render `gs-gradle-0.1.0.jar`.
+
 Now if you run `gradle build`, Gradle should resolve the Joda Time dependency from the Maven Central repository and the build will succeed.
 
 
 == Build your project with Gradle Wrapper
 
-The Gradle Wrapper is the preferred way of starting a Gradle build. It consists of a batch script for Windows support and a shell script for support on OS X and Linux. These scripts allow you to run a Gradle build without requiring that Gradle be installed on your system. You can install the wrapper into your project by adding the following lines to the build.gradle:
+The Gradle Wrapper is the preferred way of starting a Gradle build. It consists of a batch script for Windows and a shell script for OS X and Linux. These scripts allow you to run a Gradle build without requiring that Gradle be installed on your system. To make this possible, add the following block to the bottom of your `build.gradle`.
 
 [source,groovy]
 ----
-task wrapper(type: Wrapper) {
-    gradleVersion = '1.8'
-}
+include::complete/build.gradle[tag=wrapper]
 ----
 
 Run the following command to download and initialize the wrapper scripts:
@@ -231,7 +244,7 @@ After this task completes, you will notice a few new files. The two scripts are 
                 └── gradle-wrapper.jar
                 └── gradle-wrapper.properties
 
-The Gradle Wrapper is now available for building your project. It can be used in the exact same way as an installed version of Gradle. Run the wrapper script to perform the build task, just like you did previously:
+The Gradle Wrapper is now available for building your project. Add it to your version control system, and everyone that clones your project can build it just the same. It can be used in the exact same way as an installed version of Gradle. Run the wrapper script to perform the build task, just like you did previously:
 
 ----
 ./gradlew build
