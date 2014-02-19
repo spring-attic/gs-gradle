@@ -11,7 +11,7 @@ rm -rf build
 
 cd ../initial
 ../complete/gradlew -b ../initial/build.gradle wrapper
-./gradlew build
+./gradlew compileJava
 ret=$?
 if [ $ret -ne 0 ]; then
   exit $ret
