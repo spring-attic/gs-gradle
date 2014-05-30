@@ -252,7 +252,65 @@ The Gradle Wrapper is now available for building your project. Add it to your ve
 
 The first time you run the wrapper for a specified version of Gradle, it downloads and caches the Gradle binaries for that version. The Gradle Wrapper files are designed to be committed to source control so that anyone can build the project without having to first install and configure a specific version of Gradle.
 
-Here is the completed `build.gradle` file:
+At this stage, you will have built your code. You can see the results here:
+
+----
+build
+├── classes
+│   └── main
+│       └── hello
+│           ├── Greeter.class
+│           └── HelloWorld.class
+├── dependency-cache
+├── libs
+│   └── gs-gradle-0.1.0.jar
+└── tmp
+    └── jar
+        └── MANIFEST.MF
+----
+
+Included are the two expected class files for `Greeter` and `HelloWorld`, as well as a JAR file. Take a quick peek:
+
+----
+$ jar tvf build/libs/gs-gradle-0.1.0.jar
+  0 Fri May 30 16:02:32 CDT 2014 META-INF/
+ 25 Fri May 30 16:02:32 CDT 2014 META-INF/MANIFEST.MF
+  0 Fri May 30 16:02:32 CDT 2014 hello/
+369 Fri May 30 16:02:32 CDT 2014 hello/Greeter.class
+988 Fri May 30 16:02:32 CDT 2014 hello/HelloWorld.class
+----
+
+The class files are bundled up. It's important to note, that even though you declared joda-time as a dependency, the library isn't included here. And the JAR file isn't runnable either.
+
+To make this code runnable, we can use gradle's `application` plugin. Add this to your `build.gradle` file.
+
+----
+apply plugin: 'application'
+
+mainClassName = 'hello.HelloWorld'
+----
+
+Then you can run the app!
+
+----
+$ ./gradlew run
+:compileJava UP-TO-DATE
+:processResources UP-TO-DATE
+:classes UP-TO-DATE
+:run
+The current local time is: 16:16:20.544
+Hello world!
+
+BUILD SUCCESSFUL
+
+Total time: 3.798 secs
+----
+
+To bundle up dependencies requires more thought. For example, if we were building a WAR file, a format commonly associated with packing in 3rd party dependencies, we could use gradle's
+http://www.gradle.org/docs/current/userguide/war_plugin.html[WAR plugin]. If you are using Spring Boot and want a runnable JAR file, the http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#using-boot-gradle[spring-boot-gradle-plugin] is quite handy. At this stage, gradle doesn't know enough about your system
+to make a choice. But for now, this should be enough to get started using gradle.
+
+To wrap things up for this guide, here is the completed `build.gradle` file:
 
 `build.gradle`
 [source,gradle]
@@ -260,6 +318,8 @@ Here is the completed `build.gradle` file:
 include::complete/build.gradle[]
 ----
 
+NOTE: There are many start/end comments embedded here. This makes it possible to extract bits of the build file into this guide for the detailed explanations above. You don't need
+them in your production build file.
 
 == Summary
 
