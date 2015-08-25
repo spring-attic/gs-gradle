@@ -324,3 +324,6 @@ them in your production build file.
 == Summary
 
 Congratulations! You have now created a simple yet effective Gradle build file for building Java projects.
+
+include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/master/footer.adoc[]
+
