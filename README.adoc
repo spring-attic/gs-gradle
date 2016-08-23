@@ -28,12 +28,12 @@ include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/
 [[scratch]]
 == Set up the project
 
-First you set up a Java project for Gradle to build. To keep the focus on Gradle, make the project as simple as possible for now.
+First you set up a Java project for Gradle to build. (mkdir <project name>).Let's call it HelloWorld.  To keep the focus on Gradle, make the project as simple as possible for now.
 
 include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/master/create_directory_structure_hello.adoc[]
 
 
-Within the `src/main/java/hello` directory, you can create any Java classes you want. For simplicity's sake and for consistency with the rest of this guide, Spring recommends that you create two classes: `HelloWorld.java` and `Greeter.java`.
+Inside the HelloWorld folder, within the `src/main/java/hello` directory, you can create any Java classes you want. For simplicity's sake and for consistency with the rest of this guide, Spring recommends that you create two classes: `HelloWorld.java` and `Greeter.java`.
 
 `src/main/java/hello/HelloWorld.java`
 [source,java]
@@ -123,7 +123,7 @@ Speaking of adding plugins, next you add a plugin that enables basic Java build 
 
 
 == Build Java code
-Starting simple, create a very basic `build.gradle` file that has only one line in it:
+Starting simple, create a very basic `build.gradle` file(inside the HelloWorld folder) that has only one line in it:
 
 [source,groovy]
 ----
@@ -131,6 +131,17 @@ include::initial/build.gradle[]
 ----
 
 This single line in the build configuration brings a significant amount of power. Run **gradle tasks** again, and you see new tasks added to the list, including tasks for building the project, creating JavaDoc, and running tests.
+
+At this point your HelloWorld directory should look like:
+
+    └── HelloWorld
+        |── build.gradle
+        └── src
+            └── main
+                └── java
+                   └── hello
+                       |── Greeter.java
+                       └── HelloWorld.java
 
 You'll use the **gradle build** task frequently. This task compiles, tests, and assembles the code into a JAR file. You can run it like this:
 
