@@ -22,12 +22,12 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 dependencies {
-    compile "joda-time:joda-time:2.2"
+    compile "joda-time:joda-time:2.7"
 }
 // end::dependencies[]
 
 // tag::wrapper[]
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.3'
+    gradleVersion = '3.0'
 }
 // end::wrapper[]
