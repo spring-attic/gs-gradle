@@ -68,7 +68,7 @@ If all goes well, you see a welcome message:
 ....
 :help
 
-Welcome to Gradle 2.3.
+Welcome to Gradle 3.0.
 
 To run a build, run gradle <task> ...
 

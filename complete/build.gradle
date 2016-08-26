@@ -28,6 +28,6 @@ dependencies {
 
 // tag::wrapper[]
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.3'
+    gradleVersion = '3.0'
 }
 // end::wrapper[]
