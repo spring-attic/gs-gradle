@@ -53,7 +53,11 @@ include::initial/src/main/java/hello/Greeter.java[]
 
 Now that you have a project that you can build with Gradle, you can install Gradle.
 
-Gradle is downloadable as a zip file at http://www.gradle.org/downloads. Only the binaries are required, so look for the link to gradle-_version_-bin.zip. (You can also choose gradle-_version_-all.zip to get the sources and documentation as well as the binaries.)
+It's highly recommended to use an installer:
+* http://sdkman.io/
+* Home brew (brew install gradle)
+
+As a last resort, if neither of these tools suit your needs, you can download the binaries from http://www.gradle.org/downloads. Only the binaries are required, so look for the link to gradle-_version_-bin.zip. (You can also choose gradle-_version_-all.zip to get the sources and documentation as well as the binaries.)
 
 Unzip the file to your computer, and add the bin folder to your path.
 
@@ -123,7 +127,7 @@ Speaking of adding plugins, next you add a plugin that enables basic Java build 
 
 
 == Build Java code
-Starting simple, create a very basic `build.gradle` file that has only one line in it:
+Starting simple, create a very basic `build.gradle` file in the <project folder> you created at the beginning of this guide. Give it just just one line:
 
 [source,groovy]
 ----
@@ -236,7 +240,7 @@ gradle wrapper
 
 After this task completes, you will notice a few new files. The two scripts are in the root of the folder, while the wrapper jar and properties files have been added to a new `gradle/wrapper` folder.
 
-    └── initial
+    └── <project folder>
         └── gradlew
         └── gradlew.bat
         └── gradle
