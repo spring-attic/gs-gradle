@@ -104,7 +104,6 @@ You should see a list of available tasks. Assuming you run Gradle in a folder th
 
 == Build Setup tasks
 setupBuild - Initializes a new Gradle build. [incubating]
-wrapper - Generates Gradle wrapper files. [incubating]
 
 == Help tasks
 dependencies - Displays all dependencies declared in root project 'gs-gradle'.
@@ -225,17 +224,10 @@ Now if you run `gradle build`, Gradle should resolve the Joda Time dependency fr
 
 == Build your project with Gradle Wrapper
 
-The Gradle Wrapper is the preferred way of starting a Gradle build. It consists of a batch script for Windows and a shell script for OS X and Linux. These scripts allow you to run a Gradle build without requiring that Gradle be installed on your system. To make this possible, add the following block to the bottom of your `build.gradle`.
-
-[source,groovy]
-----
-include::complete/build.gradle[tag=wrapper]
-----
-
-Run the following command to download and initialize the wrapper scripts:
+The Gradle Wrapper is the preferred way of starting a Gradle build. It consists of a batch script for Windows and a shell script for OS X and Linux. These scripts allow you to run a Gradle build without requiring that Gradle be installed on your system. This used to be something added to your build file, but it's been folded into Gradle, so there is no longer any need. Instead, you simply use the following command.
 
 ----
-gradle wrapper
+$ gradle wrapper --gradle-version 2.13
 ----
 
 After this task completes, you will notice a few new files. The two scripts are in the root of the folder, while the wrapper jar and properties files have been added to a new `gradle/wrapper` folder.
