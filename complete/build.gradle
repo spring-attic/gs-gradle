@@ -28,4 +28,7 @@ dependencies {
 // end::dependencies[]
 
 // tag::wrapper[]
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.13'
+}
 // end::wrapper[]
