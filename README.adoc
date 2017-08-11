@@ -141,7 +141,7 @@ You'll use the **gradle build** task frequently. This task compiles, tests, and 
 gradle build
 ----
 
-After a few seconds, "BUILD SUCCESSFUL" indicates that the build has completed. 
+After a few seconds, "BUILD SUCCESSFUL" indicates that the build has completed.
 
 To see the results of the build effort, take a look in the _build_ folder. Therein you'll find several directories, including these three notable folders:
 
@@ -183,7 +183,7 @@ public class HelloWorld {
 }
 ----
 
-Here `HelloWorld` uses Joda Time's `LocalTime` class to get and print the current time. 
+Here `HelloWorld` uses Joda Time's `LocalTime` class to get and print the current time.
 
 If you ran `gradle build` to build the project now, the build would fail because you have not declared Joda Time as a compile dependency in the build.
 
@@ -203,7 +203,7 @@ Now that we're ready for 3rd party libraries, let's declare some.
 include::complete/build.gradle[tag=dependencies]
 ----
 
-With the `dependencies` block, you declare a single dependency for Joda Time. Specifically, you're asking for (reading right to left) version 2.2 of the joda-time library, in the joda-time group. 
+With the `dependencies` block, you declare a single dependency for Joda Time. Specifically, you're asking for (reading right to left) version 2.2 of the joda-time library, in the joda-time group.
 
 Another thing to note about this dependency is that it is a `compile` dependency, indicating that it should be available during compile-time (and if you were building a WAR file, included in the /WEB-INF/libs folder of the WAR). Other notable types of dependencies include:
 
@@ -321,5 +321,10 @@ them in your production build file.
 
 Congratulations! You have now created a simple yet effective Gradle build file for building Java projects.
 
-include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/master/footer.adoc[]
+== See Also
 
+The following guide may also be helpful:
+
+* https://spring.io/guides/gs/maven/[Building Java Projects with Maven]
+
+include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/master/footer.adoc[]
