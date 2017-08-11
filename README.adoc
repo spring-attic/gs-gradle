@@ -323,7 +323,7 @@ Congratulations! You have now created a simple yet effective Gradle build file f
 
 == See Also
 
-The following guides may also be helpful:
+The following guide may also be helpful:
 
 * https://spring.io/guides/gs/maven/[Building Java Projects with Maven]
 
