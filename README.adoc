@@ -54,8 +54,9 @@ include::initial/src/main/java/hello/Greeter.java[]
 Now that you have a project that you can build with Gradle, you can install Gradle.
 
 It's highly recommended to use an installer:
-* http://sdkman.io/
-* Home brew (brew install gradle)
+
+- http://sdkman.io/[SDKMAN]
+- https://brew.sh[Homebrew] (brew install gradle)
 
 As a last resort, if neither of these tools suit your needs, you can download the binaries from http://www.gradle.org/downloads. Only the binaries are required, so look for the link to gradle-_version_-bin.zip. (You can also choose gradle-_version_-all.zip to get the sources and documentation as well as the binaries.)
 
