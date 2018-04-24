@@ -2,6 +2,23 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'application'
 
+buildscript {
+  repositories {
+    maven {
+      url "https://plugins.gradle.org/m2/"
+    }
+  }
+  dependencies {
+    classpath "net.saliman:gradle-cobertura-plugin:2.5.4"
+  }
+}
+
+apply plugin: "net.saliman.cobertura"
+
+cobertura {
+  coverageFormats = [ 'xml' ]
+}
+
 mainClassName = 'hello.HelloWorld'
 
 // tag::repositories[]
