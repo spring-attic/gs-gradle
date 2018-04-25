@@ -10,10 +10,12 @@ buildscript {
   }
   dependencies {
     classpath "net.saliman:gradle-cobertura-plugin:2.5.4"
+    classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.6.2"
   }
 }
 
 apply plugin: "net.saliman.cobertura"
+apply plugin: 'org.sonarqube'
 
 cobertura {
   coverageFormats = [ 'xml' ]
