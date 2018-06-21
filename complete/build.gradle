@@ -11,7 +11,7 @@ repositories {
 // end::repositories[]
 
 // tag::jar[]
-jar {
+bootJar {
     baseName = 'gs-gradle'
     version =  '0.1.0'
 }
