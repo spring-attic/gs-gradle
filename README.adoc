@@ -1,5 +1,5 @@
 :spring_boot_version: 1.5.10.RELEASE
-:jdk: http://www.oracle.com/technetwork/java/javase/downloads/index.html
+:jdk: https://www.oracle.com/technetwork/java/javase/downloads/index.html
 :toc:
 :icons: font
 :source-highlighter: prettify
@@ -51,10 +51,10 @@ Now that you have a project that you can build with Gradle, you can install Grad
 
 It's highly recommended to use an installer:
 
-- http://sdkman.io/[SDKMAN]
+- https://sdkman.io/[SDKMAN]
 - https://brew.sh[Homebrew] (brew install gradle)
 
-As a last resort, if neither of these tools suit your needs, you can download the binaries from http://www.gradle.org/downloads. Only the binaries are required, so look for the link to gradle-_version_-bin.zip. (You can also choose gradle-_version_-all.zip to get the sources and documentation as well as the binaries.)
+As a last resort, if neither of these tools suit your needs, you can download the binaries from https://www.gradle.org/downloads. Only the binaries are required, so look for the link to gradle-_version_-bin.zip. (You can also choose gradle-_version_-all.zip to get the sources and documentation as well as the binaries.)
 
 Unzip the file to your computer, and add the bin folder to your path.
 
@@ -300,7 +300,7 @@ Total time: 3.798 secs
 ----
 
 To bundle up dependencies requires more thought. For example, if we were building a WAR file, a format commonly associated with packing in 3rd party dependencies, we could use gradle's
-http://www.gradle.org/docs/current/userguide/war_plugin.html[WAR plugin]. If you are using Spring Boot and want a runnable JAR file, the http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#using-boot-gradle[spring-boot-gradle-plugin] is quite handy. At this stage, gradle doesn't know enough about your system
+https://www.gradle.org/docs/current/userguide/war_plugin.html[WAR plugin]. If you are using Spring Boot and want a runnable JAR file, the https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#using-boot-gradle[spring-boot-gradle-plugin] is quite handy. At this stage, gradle doesn't know enough about your system
 to make a choice. But for now, this should be enough to get started using gradle.
 
 To wrap things up for this guide, here is the completed `build.gradle` file:
