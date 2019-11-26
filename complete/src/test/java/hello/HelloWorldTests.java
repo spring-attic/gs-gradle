@@ -12,29 +12,29 @@ import static org.junit.Assert.assertThat;
 
 public class HelloWorldTests {
 
-    private ByteArrayOutputStream baos = new ByteArrayOutputStream();
-    private PrintStream ps = new PrintStream(baos);
+	private ByteArrayOutputStream baos = new ByteArrayOutputStream();
+	private PrintStream ps = new PrintStream(baos);
 
-    @Before
-    public void setup() {
-        System.setOut(ps);
-    }
+	@Before
+	public void setup() {
+		System.setOut(ps);
+	}
 
-    @Test
-    public void shouldPrintTimeToConsole() {
-        HelloWorld.main(new String[] { });
+	@Test
+	public void shouldPrintTimeToConsole() {
+		HelloWorld.main(new String[] { });
 
-        assertThat(output(), containsString("The current local time is"));
-    }
+		assertThat(output(), containsString("The current local time is"));
+	}
 
-    @Test
-    public void shouldPrintHelloWorldToConsole() {
-        HelloWorld.main(new String[] { });
+	@Test
+	public void shouldPrintHelloWorldToConsole() {
+		HelloWorld.main(new String[] { });
 
-        assertThat(output(), containsString("Hello world!"));
-    }
+		assertThat(output(), containsString("Hello world!"));
+	}
 
-    private String output() {
-        return new String(baos.toByteArray(), StandardCharsets.UTF_8);
-    }
+	private String output() {
+		return new String(baos.toByteArray(), StandardCharsets.UTF_8);
+	}
 }

@@ -32,13 +32,13 @@ include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/
 Within the `src/main/java/hello` directory, you can create any Java classes you want. For simplicity's sake and for consistency with the rest of this guide, Spring recommends that you create two classes: `HelloWorld.java` and `Greeter.java`.
 
 `src/main/java/hello/HelloWorld.java`
-[source,java]
+[source,java,tabsize=2]
 ----
 include::initial/src/main/java/hello/HelloWorld.java[]
 ----
 
 `src/main/java/hello/Greeter.java`
-[source,java]
+[source,java,tabsize=2]
 ----
 include::initial/src/main/java/hello/Greeter.java[]
 ----
@@ -163,7 +163,7 @@ For example, suppose that in addition to saying "Hello World!", you want the app
 
 First, change HelloWorld.java to look like this:
 
-[source,java]
+[source,java,tabsize=2]
 ----
 package hello;
 
