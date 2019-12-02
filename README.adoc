@@ -8,7 +8,7 @@ This guide walks you through using Gradle to build a simple Java project.
 
 == What you'll build
 
-You'll create a simple app and then build it using Gradle.
+Added: You'll create a simple app and then build it using Gradle.
 
 
 == What you'll need
