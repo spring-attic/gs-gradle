@@ -69,7 +69,7 @@ If all goes well, you see a welcome message:
 ....
 :help
 
-Welcome to Gradle 2.3.
+Welcome to Gradle 6.0.1.
 
 To run a build, run gradle <task> ...
 
@@ -77,9 +77,16 @@ To see a list of available tasks, run gradle tasks
 
 To see a list of command-line options, run gradle --help
 
-BUILD SUCCESSFUL
+To see more detail about a task, run gradle help --task <task>
 
-Total time: 2.675 secs
+For troubleshooting, visit https://help.gradle.org
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.0.1/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 455ms
+1 actionable task: 1 executed
 ....
 
 You now have Gradle installed.
@@ -97,24 +104,39 @@ You should see a list of available tasks. Assuming you run Gradle in a folder th
 ....
 :tasks
 
-== All tasks runnable from root project
+------------------------------------------------------------
+Tasks runnable from root project
+------------------------------------------------------------
 
-== Build Setup tasks
-setupBuild - Initializes a new Gradle build. [incubating]
+Build Setup tasks
+-----------------
+init - Initializes a new Gradle build.
+wrapper - Generates Gradle wrapper files.
 
-== Help tasks
+Help tasks
+----------
+buildEnvironment - Displays all buildscript dependencies declared in root project 'gs-gradle'.
+components - Displays the components produced by root project 'gs-gradle'. [incubating]
 dependencies - Displays all dependencies declared in root project 'gs-gradle'.
 dependencyInsight - Displays the insight into a specific dependency in root project 'gs-gradle'.
-help - Displays a help message
+dependentComponents - Displays the dependent components of components in root project 'gs-gradle'. [incubating]
+help - Displays a help message.
+model - Displays the configuration model of root project 'gs-gradle'. [incubating]
+outgoingVariants - Displays the outgoing variants of root project 'gs-gradle'.
 projects - Displays the sub-projects of root project 'gs-gradle'.
 properties - Displays the properties of root project 'gs-gradle'.
 tasks - Displays the tasks runnable from root project 'gs-gradle'.
 
-To see all tasks and more detail, run with --all.
+To see all tasks and more detail, run gradle tasks --all
 
-BUILD SUCCESSFUL
+To see more detail about a task, run gradle help --task <task>
 
-Total time: 3.077 secs
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.0.1/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 477ms
+1 actionable task: 1 executed
 ....
 
 Even though these tasks are available, they don't offer much value without a project build configuration. As you flesh out the `build.gradle` file, some tasks will be more useful. The list of tasks will grow as you add plugins to `build.gradle`, so you'll occasionally want to run **tasks** again to see what tasks are available.
@@ -204,8 +226,8 @@ With the `dependencies` block, you declare a single dependency for Joda Time. Sp
 
 Another thing to note about this dependency is that it is a `compile` dependency, indicating that it should be available during compile-time (and if you were building a WAR file, included in the /WEB-INF/libs folder of the WAR). Other notable types of dependencies include:
 
-* `providedCompile`. Required dependencies for compiling the project code, but that will be provided at runtime by a container running the code (for example, the Java Servlet API).
-* `testCompile`. Dependencies used for compiling and running tests, but not required for building or running the project's runtime code.
+* `implementation`. Required dependencies for compiling the project code, but that will be provided at runtime by a container running the code (for example, the Java Servlet API).
+* `testImplementation`. Dependencies used for compiling and running tests, but not required for building or running the project's runtime code.
 
 Finally, let's specify the name for our JAR artifact.
 
@@ -224,7 +246,7 @@ Now if you run `gradle build`, Gradle should resolve the Joda Time dependency fr
 The Gradle Wrapper is the preferred way of starting a Gradle build. It consists of a batch script for Windows and a shell script for OS X and Linux. These scripts allow you to run a Gradle build without requiring that Gradle be installed on your system. This used to be something added to your build file, but it's been folded into Gradle, so there is no longer any need. Instead, you simply use the following command.
 
 ----
-$ gradle wrapper --gradle-version 2.13
+$ gradle wrapper --gradle-version 6.0.1
 ----
 
 After this task completes, you will notice a few new files. The two scripts are in the root of the folder, while the wrapper jar and properties files have been added to a new `gradle/wrapper` folder.
