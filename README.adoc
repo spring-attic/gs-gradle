@@ -15,7 +15,7 @@ You'll create a simple app and then build it using Gradle.
 
  - About 15 minutes
  - A favorite text editor or IDE
- - {jdk}[JDK 6] or later
+ - {jdk}, [JDK 6] or later
 
 
 include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/master/how_to_complete_this_guide.adoc[]
@@ -325,3 +325,4 @@ The following guide may also be helpful:
 * https://spring.io/guides/gs/maven/[Building Java Projects with Maven]
 
 include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/master/footer.adoc[]
+Thank You..
