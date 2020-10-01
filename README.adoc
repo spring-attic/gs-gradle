@@ -1,5 +1,5 @@
 :spring_boot_version: 1.5.10.RELEASE
-:jdk: https://www.oracle.com/technetwork/java/javase/downloads/index.html
+:jdk: https://www.oracle.com/technetwork/java/javase/downloads/index.html(please use jdk6 and above to enjoy this project)
 :toc:
 :icons: font
 :source-highlighter: prettify
