@@ -4,7 +4,7 @@
 :icons: font
 :source-highlighter: prettify
 :project_id: gs-gradle
-This guide walks you through using Gradle to build a simple Java project.
+This guide walks you through using Gradle to build a simple Java amazing project.
 
 == What you'll build
 
