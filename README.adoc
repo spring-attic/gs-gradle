@@ -1,3 +1,12 @@
+----------------------------------------  Follow the below steps for a quick guide on the procedure to create a gradle build file -------------------------------------------
+
+Note: Why do we need a gradle build file?
+Ans.: Gradle allows managing the classpath of your projects. It can add JAR files, directories or other projects to the build path of your application. It also supports the automatic download of your Java library dependencies. To achieve this you simply specify the dependency in your Gradle build file.
+
+
+Steps for the procedure:
+-----------------------
+
 :spring_boot_version: 1.5.10.RELEASE
 :jdk: https://www.oracle.com/technetwork/java/javase/downloads/index.html
 :toc:
