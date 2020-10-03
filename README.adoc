@@ -71,7 +71,7 @@ If all goes well, you see a welcome message:
 
 Welcome to Gradle 2.3.
 
-To run a build, run gradle <task> ...
+To run a build, run gradle <task> .....
 
 To see a list of available tasks, run gradle tasks
 
@@ -311,8 +311,7 @@ To wrap things up for this guide, here is the completed `build.gradle` file:
 include::complete/build.gradle[]
 ----
 
-NOTE: There are many start/end comments embedded here. This makes it possible to extract bits of the build file into this guide for the detailed explanations above. You don't need
-them in your production build file.
+NOTE: There are many start/end comments embedded here. This makes it possible to extract bits of the build file into this guide for the detailed explanations above. You don't need them in your production build file.
 
 == Summary
 
