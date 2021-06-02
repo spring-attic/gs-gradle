@@ -35,7 +35,7 @@ jobs:
           restore-keys: ${{ runner.os }}-gradle-
 
       -name: Output of required variable
-       run: echo ${{ github.event.pull_request.merged }}
+       run: echo "OUtput =========== ${{ github.event.pull_request.merged }} haha"
 
       - name: Build with Gradle
         if: github.event.pull_request.merged == 'false'
