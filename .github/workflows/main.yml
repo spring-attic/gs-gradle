@@ -34,7 +34,7 @@ jobs:
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
           restore-keys: ${{ runner.os }}-gradle-
 
-      -name: Output of required variable
+      - name: Output of required variable
        run: echo "OUtput =========== ${{ github.event.pull_request.merged }} haha"
 
       - name: Build with Gradle
