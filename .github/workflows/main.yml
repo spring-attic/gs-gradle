@@ -8,6 +8,7 @@ on:
       - 'feature/**'
       - 'hotfix/**'
       - 'aws-lambda'
+      - 'feature1'
     tags:
       - r*
   pull_request:
@@ -35,7 +36,7 @@ jobs:
           restore-keys: ${{ runner.os }}-gradle-
 
       - name: Output of required variable
-        run: echo "OUtput =========== ${{ github.event.pull_request.merged }} haha"
+        run: echo "Output =========== ${{ github.event.pull_request.merged }} haha"
 
       - name: Build with Gradle
         if: github.event.pull_request.merged == 'false'
