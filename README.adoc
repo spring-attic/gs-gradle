@@ -93,6 +93,7 @@ You now have Gradle installed.
 
 
 == Find out what Gradle can do
+Add a new file by name 'settings.gradle'.
 Now that Gradle is installed, see what it can do. Before you even create a build.gradle file for the project, you can ask it what tasks are available:
 
 ----
