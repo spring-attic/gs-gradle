@@ -208,6 +208,7 @@ Here `HelloWorld` uses Joda Time's `LocalTime` class to get and print the curren
 If you ran `gradle build` to build the project now, the build would fail because you have not declared Joda Time as a compile dependency in the build.
 
 For starters, you need to add a source for 3rd party libraries.
+Add below code in build.gradle.
 
 [source,groovy]
 ----
