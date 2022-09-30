@@ -67,81 +67,29 @@ gradle
 If all goes well, you see a welcome message:
 
 ....
-:help
+Task:help
 
-Welcome to Gradle 6.0.1.
+Welcome to Gradle 7.5.1.
 
-To run a build, run gradle <task> ...
+Directory '...' does not contain a Gradle build.
 
-To see a list of available tasks, run gradle tasks
+To create a new build in this directory, run gradle init
+
+For more detail on the 'init' task, see https://docs.gradle.org/7.5.1/userguide/build_init_plugin.html
+
+For more detail on creating a Gradle build, see https://docs.gradle.org/7.5.1/userguide/tutorial_using_tasks.html
 
 To see a list of command-line options, run gradle --help
 
-To see more detail about a task, run gradle help --task <task>
+For more detail on using Gradle, see https://docs.gradle.org/7.5.1/userguide/command_line_interface.html
 
 For troubleshooting, visit https://help.gradle.org
 
-Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
-Use '--warning-mode all' to show the individual deprecation warnings.
-See https://docs.gradle.org/6.0.1/userguide/command_line_interface.html#sec:command_line_warnings
-
-BUILD SUCCESSFUL in 455ms
+BUILD SUCCESSFUL in 957ms
 1 actionable task: 1 executed
 ....
 
 You now have Gradle installed.
-
-
-== Find out what Gradle can do
-Now that Gradle is installed, see what it can do. Before you even create a build.gradle file for the project, you can ask it what tasks are available:
-
-----
-gradle tasks
-----
-
-You should see a list of available tasks. Assuming you run Gradle in a folder that doesn't already have a _build.gradle_ file, you'll see some very elementary tasks such as this:
-
-....
-:tasks
-
-------------------------------------------------------------
-Tasks runnable from root project
-------------------------------------------------------------
-
-Build Setup tasks
------------------
-init - Initializes a new Gradle build.
-wrapper - Generates Gradle wrapper files.
-
-Help tasks
-----------
-buildEnvironment - Displays all buildscript dependencies declared in root project 'gs-gradle'.
-components - Displays the components produced by root project 'gs-gradle'. [incubating]
-dependencies - Displays all dependencies declared in root project 'gs-gradle'.
-dependencyInsight - Displays the insight into a specific dependency in root project 'gs-gradle'.
-dependentComponents - Displays the dependent components of components in root project 'gs-gradle'. [incubating]
-help - Displays a help message.
-model - Displays the configuration model of root project 'gs-gradle'. [incubating]
-outgoingVariants - Displays the outgoing variants of root project 'gs-gradle'.
-projects - Displays the sub-projects of root project 'gs-gradle'.
-properties - Displays the properties of root project 'gs-gradle'.
-tasks - Displays the tasks runnable from root project 'gs-gradle'.
-
-To see all tasks and more detail, run gradle tasks --all
-
-To see more detail about a task, run gradle help --task <task>
-
-Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
-Use '--warning-mode all' to show the individual deprecation warnings.
-See https://docs.gradle.org/6.0.1/userguide/command_line_interface.html#sec:command_line_warnings
-
-BUILD SUCCESSFUL in 477ms
-1 actionable task: 1 executed
-....
-
-Even though these tasks are available, they don't offer much value without a project build configuration. As you flesh out the `build.gradle` file, some tasks will be more useful. The list of tasks will grow as you add plugins to `build.gradle`, so you'll occasionally want to run **tasks** again to see what tasks are available.
-
-Speaking of adding plugins, next you add a plugin that enables basic Java build functionality.
 
 
 == Build Java code
@@ -151,8 +99,6 @@ Starting simple, create a very basic `build.gradle` file in the <project folder>
 ----
 include::initial/build.gradle[]
 ----
-
-This single line in the build configuration brings a significant amount of power. Run **gradle tasks** again, and you see new tasks added to the list, including tasks for building the project, creating JavaDoc, and running tests.
 
 You'll use the **gradle build** task frequently. This task compiles, tests, and assembles the code into a JAR file. You can run it like this:
 
@@ -175,6 +121,74 @@ At this point, the project doesn't have any library dependencies, so there's not
 The reports folder should contain a report of running unit tests on the project. Because the project doesn't yet have any unit tests, that report will be uninteresting.
 
 The libs folder should contain a JAR file that is named after the project's folder. Further down, you'll see how you can specify the name of the JAR and its version.
+
+
+== Find out what Gradle can do
+Now that Gradle is builded, you can ask it what tasks are available:
+
+----
+gradle tasks
+----
+
+You should see a list of available tasks like this:
+
+....
+> Task :tasks
+
+------------------------------------------------------------
+Tasks runnable from root project 'Nova pasta'
+------------------------------------------------------------
+
+Build tasks
+-----------
+assemble - Assembles the outputs of this project.
+build - Assembles and tests this project.
+buildDependents - Assembles and tests this project and all projects that depend on it.
+buildNeeded - Assembles and tests this project and all projects it depends on.
+classes - Assembles main classes.
+clean - Deletes the build directory.
+jar - Assembles a jar archive containing the main classes.
+testClasses - Assembles test classes.
+
+Build Setup tasks
+-----------------
+init - Initializes a new Gradle build.
+wrapper - Generates Gradle wrapper files.
+
+Documentation tasks
+-------------------
+javadoc - Generates Javadoc API documentation for the main source code.
+
+Help tasks
+----------
+buildEnvironment - Displays all buildscript dependencies declared in root project 'Nova pasta'.
+dependencies - Displays all dependencies declared in root project 'Nova pasta'.
+dependencyInsight - Displays the insight into a specific dependency in root project 'Nova pasta'.
+help - Displays a help message.
+javaToolchains - Displays the detected java toolchains.
+outgoingVariants - Displays the outgoing variants of root project 'Nova pasta'.
+projects - Displays the sub-projects of root project 'Nova pasta'.
+properties - Displays the properties of root project 'Nova pasta'.
+resolvableConfigurations - Displays the configurations that can be resolved in root project 'Nova pasta'.
+tasks - Displays the tasks runnable from root project 'Nova pasta'.
+
+Verification tasks
+------------------
+check - Runs all checks.
+test - Runs the test suite.
+
+Rules
+-----
+Pattern: clean<TaskName>: Cleans the output files of a task.
+Pattern: build<ConfigurationName>: Assembles the artifacts of a configuration.
+
+To see all tasks and more detail, run gradle tasks --all
+
+To see more detail about a task, run gradle help --task <task>
+
+BUILD SUCCESSFUL in 962ms
+1 actionable task: 1 executed
+....
 
 
 == Declare dependencies
