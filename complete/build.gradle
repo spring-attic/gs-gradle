@@ -1,6 +1,8 @@
-apply plugin: 'java'
-apply plugin: 'eclipse'
-apply plugin: 'application'
+plugins {
+    id 'java'
+    id 'eclipse'
+    id 'application'
+}
 
 mainClassName = 'hello.HelloWorld'
 
@@ -18,11 +20,11 @@ jar {
 // end::jar[]
 
 // tag::dependencies[]
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+sourceCompatibility = 17
+targetCompatibility = 17
 
 dependencies {
-    implementation "joda-time:joda-time:2.2"
+    implementation "joda-time:joda-time:2.12.5"
     testImplementation "junit:junit:4.12"
 }
 // end::dependencies[]
